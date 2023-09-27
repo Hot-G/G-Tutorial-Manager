@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7214402124714723694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 895afeea2074412ca609904f8eeec0d4, type: 3}
+  m_Name: TestTutorial
+  m_EditorClassIdentifier: 
+  delay: 3
+  text: ALRIGHT
+--- !u!114 &-6655539345161080936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 895afeea2074412ca609904f8eeec0d4, type: 3}
+  m_Name: TestTutorial
+  m_EditorClassIdentifier: 
+  delay: 5
+  text: THIS IS PLAYER
+--- !u!114 &-1501064649409418230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7751b352bce7e00438fc780e2494d676, type: 3}
+  m_Name: PressKeyValidator
+  m_EditorClassIdentifier: 
+  keys: 6100000062000000
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0747d3fe0d086cd489cd666f67df963c, type: 3}
+  m_Name: Tutorial Section Group
+  m_EditorClassIdentifier: 
+  GroupName: Deneme53
+  LoadLastSave: 1
+  triggerCondition: 1
+  ValidatorName: PressKeyValidator
+  Validator: {fileID: -1501064649409418230}
+  TutorialSections:
+  - {fileID: -6655539345161080936}
+  - {fileID: 7787432483210211771}
+  - {fileID: -7214402124714723694}
+--- !u!114 &7787432483210211771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f7cb13419c48f58da724dd447bdad6, type: 3}
+  m_Name: DelayBetweenTutorial
+  m_EditorClassIdentifier: 
+  delay: 2
