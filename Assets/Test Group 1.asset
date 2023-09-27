@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7751b352bce7e00438fc780e2494d676, type: 3}
   m_Name: PressKeyValidator
   m_EditorClassIdentifier: 
-  keys: 6100000062000000
+  keys: 6600000063000000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,17 +51,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0747d3fe0d086cd489cd666f67df963c, type: 3}
-  m_Name: Tutorial Section Group
+  m_Name: Test Group 1
   m_EditorClassIdentifier: 
   GroupName: Deneme53
   LoadLastSave: 1
   triggerCondition: 1
-  ValidatorName: PressKeyValidator
   Validator: {fileID: -1501064649409418230}
   TutorialSections:
+  - {fileID: 3665642047359275169}
   - {fileID: -6655539345161080936}
   - {fileID: 7787432483210211771}
   - {fileID: -7214402124714723694}
+--- !u!114 &3665642047359275169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 645babb13ebc230458b7dfbd79e8117c, type: 3}
+  m_Name: PressKeyTutorial
+  m_EditorClassIdentifier: 
+  keys: 6600000067000000
 --- !u!114 &7787432483210211771
 MonoBehaviour:
   m_ObjectHideFlags: 0

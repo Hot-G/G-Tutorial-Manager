@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,15 +9,12 @@ public class TutorialSectionGroup : TutorialSection
     private int _currentSectionIndex;
     private bool _sectionIsCompleted;
 
-    public Action OnGroupCompleted;
-
     public string GroupName;
     public bool LoadLastSave = true;
     public TriggerCondition triggerCondition;
-    public string ValidatorName;
+    public TutorialValidator Validator;
     
-    [HideInInspector] public TutorialValidator Validator;
-    [SerializeReference] public List<TutorialSection> TutorialSections;
+    public List<TutorialSection> TutorialSections;
     
     public enum TriggerCondition
     {
@@ -57,6 +53,7 @@ public class TutorialSectionGroup : TutorialSection
     public TutorialSectionGroup Clone()
     {
         var instance = Instantiate(this);
+        instance.Validator = Instantiate(instance.Validator);
 
         for (int i = 0; i < instance.TutorialSections.Count; i++)
         {
@@ -86,8 +83,6 @@ public class TutorialSectionGroup : TutorialSection
 
     public void Init()
     {
-        //if (triggerCondition == TriggerCondition.Validator && ValidatorName != string.Empty)
-        //    _validator = (TutorialValidator)Activator.CreateInstance(Type.GetType(ValidatorName));
     }
 
     public bool IsValid()
@@ -128,7 +123,6 @@ public class TutorialSectionGroup : TutorialSection
             if (_currentSectionIndex >= TutorialSections.Count)
             {
                 _sectionIsCompleted = true;
-                OnGroupCompleted?.Invoke();
                 return;
             }
 

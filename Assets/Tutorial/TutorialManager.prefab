@@ -243,8 +243,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: cf4925f0db3e94f2daa79c988bb13aa8, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: c6778e4e022a94383b30461447baaaa6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -378,9 +378,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: SWIPE FOR TRANSFER MONEY
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5f2955adcfffd4649a5c73844a404700, type: 2}
-  m_sharedMaterial: {fileID: 8295434615075161782, guid: 5f2955adcfffd4649a5c73844a404700,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -594,8 +593,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6339ee210cee1f04da73151ffbe9d783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SectionGroups: []
-  sectionLoopIsRunning: 0
+  ValidatingTutorialGroups: []
+  ActiveTutorialGroups: []
+  activeTutorialLoopIsRunning: 0
+  TutorialSettings: {fileID: 11400000, guid: d276734a7d5b1d24ca1a72bf9df74a19, type: 2}
 --- !u!1 &6711139736854326332
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,6 @@ public class TutorialSectionGroupEditor : Editor
     private SerializedProperty _loadLastSaveProperty;
     private SerializedProperty _sectionListProperty;
     private SerializedProperty _sectionTriggerConditionProperty;
-    private SerializedProperty _sectionValidatorNameProperty;
     private SerializedProperty _sectionValidatorProperty;
 
     private List<string> _availableValidators;
@@ -27,7 +26,6 @@ public class TutorialSectionGroupEditor : Editor
         _groupNameProperty = serializedObject.FindProperty(nameof(TutorialSectionGroup.GroupName));
         _loadLastSaveProperty = serializedObject.FindProperty(nameof(TutorialSectionGroup.LoadLastSave));
         _sectionTriggerConditionProperty = serializedObject.FindProperty(nameof(TutorialSectionGroup.triggerCondition));
-        _sectionValidatorNameProperty = serializedObject.FindProperty(nameof(TutorialSectionGroup.ValidatorName));
         _sectionValidatorProperty = serializedObject.FindProperty(nameof(TutorialSectionGroup.Validator));
         _sectionListProperty = serializedObject.FindProperty(nameof(TutorialSectionGroup.TutorialSections));
 
@@ -63,14 +61,13 @@ public class TutorialSectionGroupEditor : Editor
         if ((TutorialSectionGroup.TriggerCondition)_sectionTriggerConditionProperty.enumValueIndex ==
             TutorialSectionGroup.TriggerCondition.Validator)
         {
-            var currentValidatorIndex = _availableValidators.IndexOf(_sectionValidatorNameProperty.stringValue);
+            var currentValidatorIndex = _sectionValidatorProperty.objectReferenceValue == null ?
+                -1 : _availableValidators.IndexOf(_sectionValidatorProperty.objectReferenceValue.GetType().ToString());
             _enumChoice =
                 EditorGUILayout.Popup("Select Validator", currentValidatorIndex, _availableValidators.ToArray());
 
             if (_enumChoice != currentValidatorIndex)
             {
-                _sectionValidatorNameProperty.stringValue = _availableValidators[_enumChoice];
-
                 var newInstance = ScriptableObject.CreateInstance(_availableValidators[_enumChoice]);
                 newInstance.name = _availableValidators[_enumChoice];
                 AssetDatabase.AddObjectToAsset(newInstance, target);

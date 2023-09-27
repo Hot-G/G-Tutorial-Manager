@@ -26,16 +26,16 @@ public class TutorialManager : MonoBehaviour
 
     [HideInInspector] public bool activeTutorialLoopIsRunning;
 
-    public List<TutorialSectionGroup> AllTutorialGroups;
+    public GTutorialSettings TutorialSettings;
 
     private void Awake()
     {
         ActiveTutorialGroups = new List<TutorialSectionGroup>();
         _tutorialUIController = GetComponentInChildren<TutorialUIController>();
 
-        for (var i = 0; i < AllTutorialGroups.Count; i++)
+        for (var i = 0; i < TutorialSettings.AllTutorialGroups.Count; i++)
         {
-            var tutorialGroup = AllTutorialGroups[i];
+            var tutorialGroup = TutorialSettings.AllTutorialGroups[i];
             if (tutorialGroup.TutorialIsCompleted) continue;
 
             tutorialGroup = tutorialGroup.Clone();
@@ -84,6 +84,8 @@ public class TutorialManager : MonoBehaviour
     
     private IEnumerator SectionGroupTriggerValidatorCoroutine()
     {
+        var validatorDelay = new WaitForSecondsRealtime(TutorialSettings.scanValidatorsDelayInMs / 1000);
+        
         while (ValidatingTutorialGroups.Count != 0)
         {
             for (int i = 0; i < ValidatingTutorialGroups.Count; i++)
@@ -93,11 +95,9 @@ public class TutorialManager : MonoBehaviour
                     StartTutorial(ValidatingTutorialGroups[i]);
                     ValidatingTutorialGroups.RemoveAt(i--);
                 }
-
-                yield return null;
             }
 
-            yield return null;
+            yield return validatorDelay;
         }
     }
 }
