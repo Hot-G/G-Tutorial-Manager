@@ -3,7 +3,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(menuName = "Tutorial/New Tutorial Section Group", fileName = "Tutorial Section Group", order = 0)]
-public class TutorialSectionGroup : TutorialSection
+public class TutorialSectionGroup : ScriptableObject
 {
     private TutorialSection _currentTutorialSection;
     private int _currentSectionIndex;
@@ -72,14 +72,13 @@ public class TutorialSectionGroup : TutorialSection
 
         Destroy(this);
     }
-
     
-    #endregion
-
     public void Add(TutorialSection newSection)
     {
         TutorialSections.Add(newSection);
     }
+    
+    #endregion
 
     public void Init()
     {
@@ -93,7 +92,7 @@ public class TutorialSectionGroup : TutorialSection
         return false;
     }
 
-    public override void OnTutorialStart()
+    public void OnTutorialStart()
     {
         if (LoadLastSave)
             _currentSectionIndex = PlayerPrefs.GetInt(GroupName);
@@ -102,12 +101,12 @@ public class TutorialSectionGroup : TutorialSection
         _currentTutorialSection.OnTutorialStart();
     }
 
-    public override bool EndCheck()
+    public bool EndCheck()
     {
         return _sectionIsCompleted;
     }
 
-    public override void Tick()
+    public void Tick()
     {
         if (_currentTutorialSection == null) return;
 
