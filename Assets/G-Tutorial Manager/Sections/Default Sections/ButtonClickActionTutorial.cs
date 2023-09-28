@@ -71,4 +71,9 @@ public class ButtonClickActionTutorial : TutorialSection
     {
         return _onClickButton;
     }
+
+    public override string ToString()
+    {
+        return "Click Button Action";
+    }
 }

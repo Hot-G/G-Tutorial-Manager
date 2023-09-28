@@ -62,12 +62,17 @@ public class TutorialSectionGroupEditor : Editor
             TutorialSectionGroup.TriggerCondition.Validator)
         {
             var currentValidatorIndex = _sectionValidatorProperty.objectReferenceValue == null ?
-                -1 : _availableValidators.IndexOf(_sectionValidatorProperty.objectReferenceValue.GetType().ToString());
+                -1 : _availableValidators.IndexOf(_sectionValidatorProperty.objectReferenceValue.ToString());
             _enumChoice =
                 EditorGUILayout.Popup("Select Validator", currentValidatorIndex, _availableValidators.ToArray());
 
             if (_enumChoice != currentValidatorIndex)
             {
+                if (_sectionValidatorProperty.objectReferenceValue != null) //DESTROY OLD VALIDATOR
+                {
+                    DestroyImmediate(_sectionValidatorProperty.objectReferenceValue, true);
+                }
+                
                 var newInstance = ScriptableObject.CreateInstance(_availableValidators[_enumChoice]);
                 newInstance.name = _availableValidators[_enumChoice];
                 AssetDatabase.AddObjectToAsset(newInstance, target);
@@ -80,6 +85,11 @@ public class TutorialSectionGroupEditor : Editor
                 Editor.CreateCachedEditor(_sectionValidatorProperty.objectReferenceValue, null, ref _ed);
                 _ed.OnInspectorGUI();
             }
+        }
+        else if (_sectionValidatorProperty.objectReferenceValue != null) //DESTROY IF CHANGE TRIGGER CONDITION
+        {
+            DestroyImmediate(_sectionValidatorProperty.objectReferenceValue, true);
+            _sectionValidatorProperty.objectReferenceValue = null;
         }
 
         EditorGUILayout.Space(20);
@@ -122,7 +132,7 @@ public class TutorialSectionGroupEditor : Editor
 
             //Title
             EditorGUILayout.Space();
-            EditorGUILayout.LabelField(item.objectReferenceValue.GetType().Name, _titleStyle);
+            EditorGUILayout.LabelField(item.objectReferenceValue.ToString(), _titleStyle);
             EditorGUILayout.Space();
             //TITLE END
 

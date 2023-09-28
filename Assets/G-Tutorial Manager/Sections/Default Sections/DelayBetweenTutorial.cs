@@ -27,4 +27,9 @@ public class DelayBetweenTutorial : TutorialSection
         if (_currentTime < delay) return;
         _timeIsOver = true;
     }
+
+    public override string ToString()
+    {
+        return "Delay";
+    }
 }

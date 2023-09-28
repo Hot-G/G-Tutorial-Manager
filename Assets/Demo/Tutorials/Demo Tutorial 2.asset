@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7771288781524289503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332ef3e48601761459439186069b7fc8, type: 3}
+  m_Name: SecondTutorialValidator
+  m_EditorClassIdentifier: 
+  keys: 67000000
+  targetGroup: {fileID: 11400000, guid: f65689f1ea2e5e04d98e7306724f15d1, type: 2}
+--- !u!114 &-4348076368547021011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 895afeea2074412ca609904f8eeec0d4, type: 3}
+  m_Name: OverlapUITestTutorial
+  m_EditorClassIdentifier: 
+  delay: 3
+  tutorialText: You can Overlap everything!
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0747d3fe0d086cd489cd666f67df963c, type: 3}
+  m_Name: Demo Tutorial 2
+  m_EditorClassIdentifier: 
+  GroupName: SecondDemoTutorial
+  LoadLastSave: 1
+  triggerCondition: 1
+  Validator: {fileID: -7771288781524289503}
+  TutorialSections:
+  - {fileID: -4348076368547021011}

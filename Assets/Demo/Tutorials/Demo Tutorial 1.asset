@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8776276336220597148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f7cb13419c48f58da724dd447bdad6, type: 3}
+  m_Name: DelayBetweenTutorial
+  m_EditorClassIdentifier: 
+  delay: 2
+--- !u!114 &-6729741886498685540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cf3d41bca9a44fcb32afd7493900bb8, type: 3}
+  m_Name: ButtonClickActionTutorial
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 0}
+  buttonName: Increase Health Button
+  tutorialText: Click And Increase Your Health
+  textAlignment: 1026
+  glowButton: 0
+  pauseGame: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0747d3fe0d086cd489cd666f67df963c, type: 3}
+  m_Name: Demo Tutorial 1
+  m_EditorClassIdentifier: 
+  GroupName: FirstDemoTutorial
+  LoadLastSave: 1
+  triggerCondition: 1
+  Validator: {fileID: 1880315410449214119}
+  TutorialSections:
+  - {fileID: 4816506821405529278}
+  - {fileID: -8776276336220597148}
+  - {fileID: -6729741886498685540}
+--- !u!114 &1880315410449214119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdb77e3d1a6e9ec49b6fd130fa7098c9, type: 3}
+  m_Name: StartTutorialValidator
+  m_EditorClassIdentifier: 
+--- !u!114 &4816506821405529278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cf3d41bca9a44fcb32afd7493900bb8, type: 3}
+  m_Name: ButtonClickActionTutorial
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 0}
+  buttonName: Decrease Health Button
+  tutorialText: Click And Decrease Your Health
+  textAlignment: 514
+  glowButton: 1
+  pauseGame: 0

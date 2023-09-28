@@ -6,4 +6,9 @@ public abstract class TutorialSection : ScriptableObject
     public virtual void OnTutorialStart(){}
     public virtual void OnTutorialEnded(){}
     public virtual void Tick(){}
+
+    public override string ToString()
+    {
+        return GetType().Name;
+    }
 }
