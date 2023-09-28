@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-[System.Serializable]
 public class DelayBetweenTutorial : TutorialSection
 {
     private bool _timeIsOver;

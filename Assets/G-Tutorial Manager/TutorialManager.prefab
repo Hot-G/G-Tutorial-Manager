@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 9204073753430752825}
   - component: {fileID: 106583247481843757}
   - component: {fileID: 4122053875020957313}
+  - component: {fileID: 50649571}
   m_Layer: 1
   m_Name: Hand Image
   m_TagString: Untagged
@@ -82,9 +83,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 144.6584, y: 144.6584}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0.37650973, y: -0.81911474}
+  m_SizeDelta: {x: 215.0335, y: 215.0335}
+  m_Pivot: {x: 0.25325245, y: 0.7277477}
 --- !u!222 &106583247481843757
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -113,7 +114,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ba176595140c130488c37095f512a3b1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f7c998083d34405488caac45a6217530, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -123,6 +124,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &50649571
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978383712453582627}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 08d8851b7ce54de47b35bef8f474fa5a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2327413905258406530
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,6 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handPanel: {fileID: 6744976491386426086}
   handImageTransform: {fileID: 5176346859614314178}
+  handAnimator: {fileID: 50649571}
   handText: {fileID: 502081656108918706}
   infoPanel: {fileID: 3713818817519291237}
   infoText: {fileID: 3713818816832568446}
@@ -633,7 +656,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0.00012207031}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2946073956623106955

@@ -20,7 +20,13 @@ public class TutorialUIController : MonoBehaviour
     [Header("Hand UI Requirements")]
     [SerializeField] private GameObject handPanel;
     public RectTransform handImageTransform;
+    public Animator handAnimator;
     public TMP_Text handText;
+
+    public enum HandAnimation
+    {
+        Click
+    }
     
 
     public TutorialUIController SetHandActive(bool isActive)
@@ -31,6 +37,7 @@ public class TutorialUIController : MonoBehaviour
         {
             handImageTransform.localScale = Vector3.one;
             handText.SetText(string.Empty);
+            handAnimator.SetTrigger("Reset");
         }
             
         return this;
@@ -46,6 +53,13 @@ public class TutorialUIController : MonoBehaviour
     public TutorialUIController SetHandText(string text)
     {
         handText.SetText(text);
+
+        return this;
+    }
+    
+    public TutorialUIController SetHandAnimation(HandAnimation handAnimation)
+    {
+        handAnimator.SetTrigger(handAnimation.ToString());
 
         return this;
     }

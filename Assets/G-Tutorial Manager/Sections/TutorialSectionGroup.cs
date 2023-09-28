@@ -53,7 +53,8 @@ public class TutorialSectionGroup : ScriptableObject
     public TutorialSectionGroup Clone()
     {
         var instance = Instantiate(this);
-        instance.Validator = Instantiate(instance.Validator);
+        if (triggerCondition == TriggerCondition.Validator)
+            instance.Validator = Instantiate(instance.Validator);
 
         for (int i = 0; i < instance.TutorialSections.Count; i++)
         {

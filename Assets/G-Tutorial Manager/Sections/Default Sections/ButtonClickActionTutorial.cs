@@ -2,7 +2,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-[System.Serializable]
 public class ButtonClickActionTutorial : TutorialSection
 {
     [HideInInspector] public Button targetButton;
@@ -15,9 +14,6 @@ public class ButtonClickActionTutorial : TutorialSection
 
     protected bool _onClickButton;
     protected TutorialUIController _tutorialUIController;
-    
-    private float _animationTime;
-    private const float MaxAnimTime = 1f;
 
     public override void OnTutorialStart()
     {
@@ -41,7 +37,9 @@ public class ButtonClickActionTutorial : TutorialSection
 
     protected void SetupVisual()
     {
-        _tutorialUIController.SetHandActive(true).SetHandPosition(targetButton.transform.position);
+        _tutorialUIController.SetHandActive(true)
+            .SetHandPosition(targetButton.transform.position)
+            .SetHandAnimation(TutorialUIController.HandAnimation.Click);
 
         if (glowButton)
         {
@@ -72,13 +70,5 @@ public class ButtonClickActionTutorial : TutorialSection
     public override bool EndCheck()
     {
         return _onClickButton;
-    }
-
-    public override void Tick()
-    {
-        _tutorialUIController.HandAnimateClick(Vector3.one * 1.2f, _animationTime / MaxAnimTime);
-
-        _animationTime += Time.unscaledDeltaTime;
-        if (_animationTime >= MaxAnimTime) _animationTime = 0;
     }
 }
