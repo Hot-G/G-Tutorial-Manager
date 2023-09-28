@@ -110,8 +110,6 @@ public class TutorialSectionGroup : ScriptableObject
     {
         if (_currentTutorialSection == null) return;
 
-        _currentTutorialSection.Tick();
-
         if (_currentTutorialSection.EndCheck())
         {
             _currentTutorialSection.OnTutorialEnded();
@@ -128,5 +126,7 @@ public class TutorialSectionGroup : ScriptableObject
             _currentTutorialSection = TutorialSections[_currentSectionIndex];
             _currentTutorialSection.OnTutorialStart();
         }
+
+        _currentTutorialSection.Tick();
     }
 }

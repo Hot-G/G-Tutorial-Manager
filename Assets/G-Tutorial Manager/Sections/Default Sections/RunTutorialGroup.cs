@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RunTutorialGroup : TutorialSection
@@ -8,6 +6,7 @@ public class RunTutorialGroup : TutorialSection
 
     public override void OnTutorialStart()
     {
+        tutorialSectionGroup = tutorialSectionGroup.Clone();
         tutorialSectionGroup.OnTutorialStart();
     }
 

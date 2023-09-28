@@ -1,33 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7214402124714723694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 895afeea2074412ca609904f8eeec0d4, type: 3}
-  m_Name: TestTutorial
-  m_EditorClassIdentifier: 
-  delay: 3
-  text: ALRIGHT
---- !u!114 &-6655539345161080936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 895afeea2074412ca609904f8eeec0d4, type: 3}
-  m_Name: TestTutorial
-  m_EditorClassIdentifier: 
-  delay: 5
-  text: THIS IS PLAYER
 --- !u!114 &-1501064649409418230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41,6 +13,20 @@ MonoBehaviour:
   m_Name: PressKeyValidator
   m_EditorClassIdentifier: 
   keys: 6600000063000000
+--- !u!114 &-795653979178643875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 895afeea2074412ca609904f8eeec0d4, type: 3}
+  m_Name: TestTutorial
+  m_EditorClassIdentifier: 
+  delay: 6
+  text: ALRIGHT
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55,14 +41,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GroupName: Deneme53
   LoadLastSave: 1
-  triggerCondition: 1
+  triggerCondition: 0
   Validator: {fileID: -1501064649409418230}
   TutorialSections:
-  - {fileID: 3665642047359275169}
-  - {fileID: -6655539345161080936}
-  - {fileID: 7787432483210211771}
-  - {fileID: -7214402124714723694}
---- !u!114 &3665642047359275169
+  - {fileID: -795653979178643875}
+  - {fileID: 5956338115204592021}
+  - {fileID: 3927578461681892871}
+--- !u!114 &3927578461681892871
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,11 +56,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 645babb13ebc230458b7dfbd79e8117c, type: 3}
-  m_Name: PressKeyTutorial
+  m_Script: {fileID: 11500000, guid: 895afeea2074412ca609904f8eeec0d4, type: 3}
+  m_Name: TestTutorial
   m_EditorClassIdentifier: 
-  keys: 6600000067000000
---- !u!114 &7787432483210211771
+  delay: 4
+  text: THIS IS PLAYER
+--- !u!114 &5956338115204592021
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
