@@ -61,6 +61,7 @@ public class TutorialSectionGroupEditor : Editor
         if ((TutorialSectionGroup.TriggerCondition)_sectionTriggerConditionProperty.enumValueIndex ==
             TutorialSectionGroup.TriggerCondition.Validator)
         {
+            //Check Selected Validator
             var currentValidatorIndex = _sectionValidatorProperty.objectReferenceValue == null ?
                 -1 : _availableValidators.IndexOf(_sectionValidatorProperty.objectReferenceValue.ToString());
             _enumChoice =
@@ -72,14 +73,14 @@ public class TutorialSectionGroupEditor : Editor
                 {
                     DestroyImmediate(_sectionValidatorProperty.objectReferenceValue, true);
                 }
-                
+                //Create new validator instance
                 var newInstance = ScriptableObject.CreateInstance(_availableValidators[_enumChoice]);
                 newInstance.name = _availableValidators[_enumChoice];
                 AssetDatabase.AddObjectToAsset(newInstance, target);
 
                 _sectionValidatorProperty.objectReferenceValue = newInstance;
             }
-
+            //Show validator in editor
             if (_sectionValidatorProperty.objectReferenceValue != null)
             {
                 Editor.CreateCachedEditor(_sectionValidatorProperty.objectReferenceValue, null, ref _ed);
@@ -139,7 +140,7 @@ public class TutorialSectionGroupEditor : Editor
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.BeginVertical();
 
-            SerializedObject obj = new SerializedObject(item.objectReferenceValue);
+            //SerializedObject obj = new SerializedObject(item.objectReferenceValue);
 
             Editor.CreateCachedEditor(item.objectReferenceValue, null, ref _ed);
 
@@ -147,7 +148,7 @@ public class TutorialSectionGroupEditor : Editor
 
             EditorGUILayout.EndVertical();
 
-            if (GUILayout.Button("↑", GUILayout.Width(32)))
+            if (GUILayout.Button("↑", GUILayout.Width(32))) //Move section up
             {
                 if (i != 0)
                 {
@@ -158,7 +159,7 @@ public class TutorialSectionGroupEditor : Editor
                 }
             }
 
-            if (GUILayout.Button("↓", GUILayout.Width(32)))
+            if (GUILayout.Button("↓", GUILayout.Width(32))) //Move section down
             {
                 if (i != _sectionListProperty.arraySize - 1)
                 {
@@ -169,7 +170,7 @@ public class TutorialSectionGroupEditor : Editor
                 }
             }
 
-            if (GUILayout.Button("-", GUILayout.Width(32)))
+            if (GUILayout.Button("-", GUILayout.Width(32))) //Delete section button
             {
                 toDelete = i;
             }

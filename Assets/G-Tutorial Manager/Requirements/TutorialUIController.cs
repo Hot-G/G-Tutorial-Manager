@@ -22,6 +22,11 @@ public class TutorialUIController : MonoBehaviour
     public Animator handAnimator;
     public TMP_Text handText;
 
+    
+    /// <summary>
+    /// Call hand animations easily with this enum
+    /// Add animation name here if you add new animation
+    /// </summary>
     public enum HandAnimation
     {
         Click
@@ -58,6 +63,11 @@ public class TutorialUIController : MonoBehaviour
         return this;
     }
     
+    /// <summary>
+    /// Set Hand Text
+    /// </summary>
+    /// <param name="text"></param>
+    /// <returns></returns>
     public TutorialUIController SetHandText(string text)
     {
         handText.SetText(text);
@@ -88,12 +98,6 @@ public class TutorialUIController : MonoBehaviour
         handImageTransform.position =
             Vector3.Lerp(startPoint, endPoint, animationTime);
     }
-        
-    public void HandAnimateClick(Vector3 maxScale, float animationTime)
-    {
-        handImageTransform.localScale =
-            Vector3.Lerp(Vector3.one, maxScale, Mathf.PingPong(animationTime, 0.5f));
-    }
 
 #endregion
 
@@ -109,6 +113,12 @@ public class TutorialUIController : MonoBehaviour
     private Sprite _infoMaskDefaultSprite;
     
     
+    /// <summary>
+    /// Show or hide Info panel in tutorial.
+    /// </summary>
+    /// <param name="isActive">Set Info Panel Active</param>
+    /// <param name="showMask">Show background mask with info panel</param>
+    /// <returns></returns>
     public TutorialUIController SetInfoActive(bool isActive, bool showMask = true)
     {
         infoPanel.SetActive(isActive);
@@ -131,6 +141,11 @@ public class TutorialUIController : MonoBehaviour
         return this;
     }
     
+    /// <summary>
+    /// Set Mask Position in Info Panel
+    /// </summary>
+    /// <param name="newPosition">It's world position</param>
+    /// <returns></returns>
     public TutorialUIController SetInfoMaskPosition(Vector3 newPosition)
     {
         infoMaskTransform.position = newPosition;
@@ -138,6 +153,11 @@ public class TutorialUIController : MonoBehaviour
         return this;
     }
     
+    /// <summary>
+    /// Set Mask Size in Info Panel
+    /// </summary>
+    /// <param name="size">Mask Size</param>
+    /// <returns></returns>
     public TutorialUIController SetInfoMaskSize(Vector2 size)
     {
         infoMaskTransform.sizeDelta = size;
@@ -145,6 +165,12 @@ public class TutorialUIController : MonoBehaviour
         return this;
     }
     
+    /// <summary>
+    /// Set Text in Info Panel with Alignment
+    /// </summary>
+    /// <param name="newText">Info Text</param>
+    /// <param name="textAlignmentOptions">Info Text Alignment</param>
+    /// <returns></returns>
     public TutorialUIController SetInfoText(string newText, TextAlignmentOptions textAlignmentOptions = TextAlignmentOptions.Bottom)
     {
         infoText.SetText(newText);
@@ -153,6 +179,11 @@ public class TutorialUIController : MonoBehaviour
         return this;
     }
 
+    /// <summary>
+    /// Glow target Image or Button
+    /// </summary>
+    /// <param name="targetUI"></param>
+    /// <returns></returns>
     public TutorialUIController InfoGlowUI(RectTransform targetUI)
     {
         if (targetUI.TryGetComponent(out Button button))

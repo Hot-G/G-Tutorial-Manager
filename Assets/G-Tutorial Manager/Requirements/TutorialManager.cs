@@ -52,6 +52,10 @@ public class TutorialManager : MonoBehaviour
         StartCoroutine(SectionGroupTriggerValidatorCoroutine());
     }
 
+    /// <summary>
+    /// Activate giving Tutorial Section Group and start tutorial
+    /// </summary>
+    /// <param name="sectionGroup"></param>
     public void StartTutorial(TutorialSectionGroup sectionGroup)
     {
         ActiveTutorialGroups.Add(sectionGroup);
@@ -60,6 +64,11 @@ public class TutorialManager : MonoBehaviour
         if (!activeTutorialLoopIsRunning)
             StartCoroutine(ActiveSectionGroupsUpdateCoroutine());
     }
+    
+    /// <summary>
+    /// Run Active Tutorials, it's run only have any active tutorial
+    /// </summary>
+    /// <returns></returns>
 
     private IEnumerator ActiveSectionGroupsUpdateCoroutine()
     {
@@ -82,6 +91,10 @@ public class TutorialManager : MonoBehaviour
         activeTutorialLoopIsRunning = false;
     }
     
+    /// <summary>
+    /// Check everytime if any tutorial can be active with Validator.
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator SectionGroupTriggerValidatorCoroutine()
     {
         var validatorDelay = new WaitForSecondsRealtime(TutorialSettings.scanValidatorsDelayInMs / 1000);

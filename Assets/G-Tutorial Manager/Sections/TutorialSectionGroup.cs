@@ -85,6 +85,10 @@ public class TutorialSectionGroup : ScriptableObject
     {
     }
 
+    /// <summary>
+    /// Check this Group is valid to run
+    /// </summary>
+    /// <returns></returns>
     public bool IsValid()
     {
         if (triggerCondition == TriggerCondition.Validator)

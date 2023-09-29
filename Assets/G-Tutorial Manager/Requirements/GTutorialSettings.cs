@@ -1,7 +1,13 @@
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
+
+/// <summary>
+/// This class include tutorial settings and all tutorial section groups in project. 
+/// </summary>
 public class GTutorialSettings : ScriptableObject
 {
     [Header("Settings")]
@@ -9,6 +15,8 @@ public class GTutorialSettings : ScriptableObject
     [Header("References")]
     public List<TutorialSectionGroup> AllTutorialGroups;
 
+    
+#if UNITY_EDITOR
     public void GetAllTutorials()
     {
         AllTutorialGroups.Clear();
@@ -45,4 +53,6 @@ public class GTutorialSettings : ScriptableObject
             }
         }
     }
+#endif
+
 }

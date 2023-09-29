@@ -6,7 +6,9 @@ public class TutorialTrigger : MonoBehaviour
 
     private void Start()
     {
-        if (tutorialSectionsGroup == null || tutorialSectionsGroup.TutorialSections.Count == 0 || tutorialSectionsGroup.TutorialIsCompleted)
+        if (tutorialSectionsGroup == null
+            || tutorialSectionsGroup.TutorialIsCompleted)
+            
             gameObject.SetActive(false); 
     }
 
