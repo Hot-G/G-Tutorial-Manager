@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9067804291802253683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0c3668bec75ff42b27e157426d42fd, type: 3}
+  m_Name: DragHandTutorial
+  m_EditorClassIdentifier: 
+  delay: 5
+  tutorialObject: {fileID: 6713307427814591368, guid: 2c3edba003f769d43b85a8d57b846100, type: 3}
+  tutorialText: Or Drag Anything!
+  startPosition: {x: -200, y: 0, z: 0}
+  endPosition: {x: 200, y: 0, z: 0}
+  animationDelay: 1
 --- !u!114 &-7771288781524289503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,3 +64,18 @@ MonoBehaviour:
   Validator: {fileID: -7771288781524289503}
   TutorialSections:
   - {fileID: -4348076368547021011}
+  - {fileID: 7317775041281109879}
+  - {fileID: -9067804291802253683}
+--- !u!114 &7317775041281109879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f7cb13419c48f58da724dd447bdad6, type: 3}
+  m_Name: DelayBetweenTutorial
+  m_EditorClassIdentifier: 
+  delay: 1

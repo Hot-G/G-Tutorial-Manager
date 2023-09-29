@@ -31,6 +31,19 @@ MonoBehaviour:
   textAlignment: 1026
   glowButton: 0
   pauseGame: 0
+--- !u!114 &-3711332412015113635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f7cb13419c48f58da724dd447bdad6, type: 3}
+  m_Name: DelayBetweenTutorial
+  m_EditorClassIdentifier: 
+  delay: 2
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,6 +64,23 @@ MonoBehaviour:
   - {fileID: 4816506821405529278}
   - {fileID: -8776276336220597148}
   - {fileID: -6729741886498685540}
+  - {fileID: -3711332412015113635}
+  - {fileID: 306242509008262997}
+--- !u!114 &306242509008262997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 645babb13ebc230458b7dfbd79e8117c, type: 3}
+  m_Name: PressKeyTutorial
+  m_EditorClassIdentifier: 
+  tutorialText: Click 'G' key and enter next tutorial.
+  textAlignment: 514
+  keys: 67000000
 --- !u!114 &1880315410449214119
 MonoBehaviour:
   m_ObjectHideFlags: 0

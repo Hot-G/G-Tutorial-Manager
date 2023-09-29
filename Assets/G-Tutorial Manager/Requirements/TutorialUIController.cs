@@ -7,7 +7,6 @@ public class TutorialUIController : MonoBehaviour
     
     private void Awake()
     {
-        
         _infoMaskImage = infoMaskTransform.GetComponent<Image>();
         _infoMaskDefaultSprite = _infoMaskImage.sprite;
 
@@ -28,7 +27,11 @@ public class TutorialUIController : MonoBehaviour
         Click
     }
     
-
+    /// <summary>
+    /// Show or hide hand in tutorial.
+    /// </summary>
+    /// <param name="isActive">Set Hand Active</param>
+    /// <returns></returns>
     public TutorialUIController SetHandActive(bool isActive)
     {
         handPanel.SetActive(isActive);
@@ -42,14 +45,19 @@ public class TutorialUIController : MonoBehaviour
             
         return this;
     }
-        
+    
+    /// <summary>
+    /// Set Hand World Position in Tutorial Screen.
+    /// </summary>
+    /// <param name="newPosition">It's new position for hand.</param>
+    /// <returns></returns>
     public TutorialUIController SetHandPosition(Vector3 newPosition)
     {
         handImageTransform.position = newPosition;
 
         return this;
     }
-        
+    
     public TutorialUIController SetHandText(string text)
     {
         handText.SetText(text);
@@ -57,6 +65,11 @@ public class TutorialUIController : MonoBehaviour
         return this;
     }
     
+    /// <summary>
+    /// Play animation on hand.
+    /// </summary>
+    /// <param name="handAnimation">It's animator trigger parameter.</param>
+    /// <returns></returns>
     public TutorialUIController SetHandAnimation(HandAnimation handAnimation)
     {
         handAnimator.SetTrigger(handAnimation.ToString());
@@ -64,6 +77,12 @@ public class TutorialUIController : MonoBehaviour
         return this;
     }
 
+    /// <summary>
+    /// Animate Hand start point to end point in animation time.
+    /// </summary>
+    /// <param name="startPoint">Hand animation start point. It's world position.</param>
+    /// <param name="endPoint">Hand animation end point. It's world position.</param>
+    /// <param name="animationTime">It's between 0 and 1</param>
     public void HandAnimateMoveTwoPoints(Vector3 startPoint, Vector3 endPoint, float animationTime)
     {
         handImageTransform.position =
@@ -84,22 +103,29 @@ public class TutorialUIController : MonoBehaviour
     [SerializeField] private GameObject infoPanel;
     [SerializeField] private TMP_Text infoText;
     [SerializeField] private RectTransform infoMaskTransform;
+    [SerializeField] private GameObject infoMaskBackground;
 
     private Image _infoMaskImage;
     private Sprite _infoMaskDefaultSprite;
     
-
-    public TutorialUIController SetInfoActive(bool isActive)
+    
+    public TutorialUIController SetInfoActive(bool isActive, bool showMask = true)
     {
         infoPanel.SetActive(isActive);
 
-        if (!isActive)
+        if (isActive)
+        {
+            infoMaskBackground.SetActive(showMask);
+        }
+        else
         {
             infoText.SetText(string.Empty);
             _infoMaskImage.sprite = _infoMaskDefaultSprite;
             infoMaskTransform.anchorMin = Vector2.one / 2;
             infoMaskTransform.anchorMax = Vector2.one / 2;
             infoMaskTransform.pivot = Vector2.one / 2;
+
+            SetInfoMaskSize(Vector2.zero);
         }
             
         return this;

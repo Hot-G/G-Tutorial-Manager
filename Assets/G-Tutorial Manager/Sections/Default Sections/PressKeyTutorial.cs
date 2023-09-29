@@ -1,9 +1,23 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PressKeyTutorial : TutorialSection
 {
+    [SerializeField] private string tutorialText;
+    [SerializeField] protected TextAlignmentOptions textAlignment = TextAlignmentOptions.Bottom;
     [SerializeField] private List<KeyCode> keys = new List<KeyCode>();
+
+    public override void OnTutorialStart()
+    {
+        TutorialManager.Instance.UI.SetInfoActive(true, false)
+            .SetInfoText(tutorialText);
+    }
+
+    public override void OnTutorialEnded()
+    {
+        TutorialManager.Instance.UI.SetInfoActive(false);
+    }
 
     public override bool EndCheck()
     {
