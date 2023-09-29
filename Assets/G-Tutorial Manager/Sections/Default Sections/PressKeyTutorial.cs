@@ -11,7 +11,7 @@ public class PressKeyTutorial : TutorialSection
     public override void OnTutorialStart()
     {
         TutorialManager.Instance.UI.SetInfoActive(true, false)
-            .SetInfoText(tutorialText);
+            .SetInfoText(tutorialText, textAlignment);
     }
 
     public override void OnTutorialEnded()

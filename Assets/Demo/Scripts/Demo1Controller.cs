@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace GTutorialManager.Demo
 {
-    public class TutorialController : MonoBehaviour
+    public class Demo1Controller : MonoBehaviour
     {
         private const float MaxHealth = 100;
         private const float HealthIncreaseValue = 10;
@@ -11,7 +11,7 @@ namespace GTutorialManager.Demo
 
         [SerializeField] private Button decreaseHealthButton;
         [SerializeField] private Button increaseHealthButton;
-        [SerializeField] private Slider healthSlider;
+        public Slider healthSlider;
     
         private void Awake()
         {

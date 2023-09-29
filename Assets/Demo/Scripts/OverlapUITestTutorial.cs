@@ -10,9 +10,12 @@ namespace GTutorialManager.Demo
         {
             Time.timeScale = 0f;
 
+            var tutorialUIController = FindObjectOfType<Demo1Controller>();
+
             TutorialManager.Instance.UI.SetInfoActive(true)
                 .SetInfoText(tutorialText)
-                .SetInfoMaskSize(new Vector2(300, 300));
+                .SetInfoMaskPosition(tutorialUIController.healthSlider.transform.position)
+                .SetInfoMaskSize(new Vector2(600, 600));
         }
 
         public override void OnTutorialEnded()
