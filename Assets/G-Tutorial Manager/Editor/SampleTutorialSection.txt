@@ -1,0 +1,9 @@
+using UnityEngine;
+
+public class {SAMPLENAME} : TutorialSection
+{
+     public override bool EndCheck()
+     {
+         return true;
+     }
+}

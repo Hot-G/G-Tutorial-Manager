@@ -1,0 +1,8 @@
+
+public class {SAMPLENAME} : TutorialValidator
+{
+    public override bool IsValid()
+    {
+        return true;
+    }
+}   

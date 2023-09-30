@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(menuName = "Tutorial/New Tutorial Section Group", fileName = "Tutorial Section Group", order = 0)]
+[CreateAssetMenu(menuName = "G Tutorial/New Tutorial Section Group", fileName = "Tutorial Section Group", order = 0)]
 public class TutorialSectionGroup : ScriptableObject
 {
     private TutorialSection _currentTutorialSection;
