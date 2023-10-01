@@ -6,15 +6,18 @@
 
 ## Table of Contents
 - [Installation](#installation)
+- [System Overview](#system-overview)
 - [Scripts Overview](#scripts-overview)
 - [Configuration](#configuration)
 - [Usage](#usage)
     - [Demo](#demo)
-- [TODO](#todo)
 - [License](#license)
 
 ## Installation
 Import this package into Unity and use it.
+
+## System Overview
+![Tutorial System](Documents/gtutorialmanagersystem.jpeg)
 
 ## Scripts Overview
 The tutorial system mainly consists of 6 core scripts:
@@ -32,7 +35,7 @@ Settings of each Tutorial Section Group:
 - **Trigger Condition**: How the tutorial is triggered (start).
    * Manual: Only trigger mannualy, by calling `TutorialManager.StartTutorial(TutorialSectionGroup)`.
    * Validator: Only trigger when a custom validator script `IsValid()` is `true`.
-- **Validator**: Reference to the validator scriptable object. It seems only condition is Validator.
+- **Validator**: Reference to the validator scriptable object. It seems only the trigger condition is Validator.
 - **Add New Tutorial Section**: The prefab that contain all tutorial steps and the actually how the tutorial shows to players.
 
 G Tutorial Settings: 
@@ -40,6 +43,16 @@ G Tutorial Settings:
 - AllTutorialGroups: Shows all Tutorial Section Groups in the project.
 
 ## Usage
+![Create Tutorial Section Group](Documents/createtutorialsectiongroup.jpg)
+
+Create a new Tutoral Section with Right click menu.
 
 ![Tutorial Section](Documents/tutorialsectiongroupinspector.jpg)
 
+Apply your settings and that's it! Your tutorial section group is ready!
+
+### Demo
+A demo scene is located at [Demo](Assets/Demo/Scenes/DemoScene.unity) folder, open the [DemoScene.unity](Assets/Demo/Scenes/DemoScene.unity) scene and you can see how G-TutorialManager works.
+
+## License
+SC Essentials is licensed under a [MIT License](https://github.com/Hot-G/G-Tutorial-Manager/blob/main/LICENSE). 
